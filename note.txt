@@ -1,0 +1,48 @@
+////////////////////////////////////////////////////////// Les tables //////////////////////////////////////////// 
+Utilisateurs (users) :
+
+user_id (clé primaire)
+username
+email
+password (crypté)
+created_at
+...
+Conversations (conversations) :
+
+conversation_id (clé primaire)
+created_at
+...
+Participants dans une Conversation (participants) :
+
+participant_id (clé primaire)
+user_id (clé étrangère référençant la table users)
+conversation_id (clé étrangère référençant la table conversations)
+last_read_message_id (pour suivre où chaque participant a lu dans la conversation)
+created_at
+...
+Messages (messages) :
+
+message_id (clé primaire)
+conversation_id (clé étrangère référençant la table conversations)
+sender_id (clé étrangère référençant la table users)
+content
+created_at
+...
+Fichiers joints aux messages (message_attachments) :
+
+attachment_id (clé primaire)
+message_id (clé étrangère référençant la table messages)
+file_name
+file_path (ou une URL si stocké à l'extérieur)
+created_at
+...
+Statut de lecture des Messages (message_status) :
+
+status_id (clé primaire)
+message_id (clé étrangère référençant la table messages)
+user_id (clé étrangère référençant la table users)
+status (lu, non lu, etc.)
+created_at
+...
+
+////////////////////////////////////////////// Packages  //////////////////////////////////////////////////////
