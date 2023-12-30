@@ -8,6 +8,11 @@ function newMessage() {
 
     let messagesContainer = document.querySelector('.messages');
 
+    document.addEventListener("DOMContentLoaded", function() {
+        let messagesContainer = document.querySelector('.messages');
+        messagesContainer.scrollTop = messagesContainer.scrollHeight;
+      });
+
     let newMessageDiv = document.createElement('div');
     newMessageDiv.className = 'sent';
 
@@ -31,24 +36,14 @@ function newMessage() {
     messagesContainer.scrollTop = messagesContainer.scrollHeight;
 }
 
+let messagesContainer = document.querySelector('.messages');
+messagesContainer.scrollTop = messagesContainer.scrollHeight;
+
 const submit = document.querySelector('.submit')
 
 submit.addEventListener('click', () => {
     newMessage();
-	// alert('ok')
 });
-
-// const draggableElement = document.getElementById('frame');
-
-// draggableElement.addEventListener('dragstart', (event) => {
-//     // Données à transférer pendant le déplacement
-//     event.dataTransfer.setData('text/plain', 'Drag me!');
-// });
-
-// draggableElement.addEventListener('dragend', () => {
-//     // Actions à effectuer à la fin du déplacement
-//     console.log('Element dropped!');
-// });
 
 const draggableElement = document.getElementById('frame');
 
@@ -75,6 +70,45 @@ function handleMouseUp() {
     document.removeEventListener('mousemove', handleMouseMove);
     document.removeEventListener('mouseup', handleMouseUp);
 }
+
+
+// let nub = parseInt(prompt('Enter one number'))
+
+// switch (nub){
+//    case 1: 
+//     alert('lundi')
+//     break
+
+//     case 2:
+//         alert('mardi')
+//         break
+        
+//         case 3:
+//         alert('mercredi')
+//         break
+        
+//         case 4:
+//         alert('jeudi')
+//         break
+        
+//         case 5:
+//         alert('vendredi')
+//         break
+        
+//         case 6:
+//         alert('samedi')
+//         break
+        
+//         case 7:
+//         alert('dimanche')
+//         break
+        
+//         default:
+//         alert('entrez un nombre entre 1 et 7')
+//         break
+//     } 
+
+
 
 // window.addEventListener('keydown', function(e) {
 //     if (e.which === 13) {
@@ -137,5 +171,3 @@ function handleMouseUp() {
 //     // Faites défiler vers le bas pour afficher le nouveau message
 //     conversationContainer.scrollTop = conversationContainer.scrollHeight;
 // }
-
-
