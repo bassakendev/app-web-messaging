@@ -817,4 +817,7 @@ body {
   border-radius: 15px;
 }
 
+.mask {
+  display: none;
+}
 /*# sourceMappingURL=styles.css.map */

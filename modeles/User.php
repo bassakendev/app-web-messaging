@@ -13,7 +13,6 @@ class User extends Model
         'quarter',
         'birthday',
         'phone',
-        'age',
         'status'
     ];
 }

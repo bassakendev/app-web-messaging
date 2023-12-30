@@ -1,14 +1,18 @@
 <?php
+require __DIR__ . '/vendor/autoload.php';
+
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+$dotenv->load();
 
 return [
     'database' => [
         'driver'   => 'mysql',
-        'host'     => 'localhost',
-        'database' => 'votre_base_de_donnees',
-        'username' => 'votre_nom_d_utilisateur',
-        'password' => 'votre_mot_de_passe',
-        'charset'  => 'utf8mb4',
-        'collation' => 'utf8mb4_unicode_ci',
+        'host'     => $_ENV['DB_HOST'],
+        'database' => $_ENV['DB_NAME'],
+        'username' => $_ENV['DB_USER'],
+        'password' => $_ENV['DB_PASSWORD'],
+        'charset'  => $_ENV['DB_CHARSET'],
+        'collation' => $_ENV['DB_COLLATION'],
         'prefix'   => '',
     ]
 ];

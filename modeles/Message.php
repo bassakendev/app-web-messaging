@@ -8,7 +8,7 @@ class Message extends Model
     protected $fillable = [
         'content',
         'type',
-        'file',
+        'file_path',
         'discussion_id',
         'user_id'
     ];

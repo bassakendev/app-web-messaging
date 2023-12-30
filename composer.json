@@ -8,6 +8,7 @@
     "require": {
         "cboden/ratchet": "^0.4.4",
         "react/socket": "^1.14",
-        "illuminate/database": "^10.35"
+        "illuminate/database": "^10.35",
+        "vlucas/phpdotenv": "^5.6"
     }
 }
