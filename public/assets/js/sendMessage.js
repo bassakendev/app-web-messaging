@@ -2,25 +2,20 @@ function newMessage() {
     let messageInput = document.querySelector(".messaging-footer textarea");
     let message = messageInput.value.trim();
 
-    if (message === '') {
+    if (message === "") {
         return false;
     }
 
-    let messagesContainer = document.querySelector('.messaging-body');
+    let messagesContainer = document.querySelector(".messaging-body");
 
-    document.addEventListener("DOMContentLoaded", function() {
-        let messagesContainer = document.querySelector('.messaging-body');
-        messagesContainer.scrollTop = messagesContainer.scrollHeight;
-      });
+    let newMessageDiv = document.createElement("div");
+    newMessageDiv.className = "sent";
 
-    let newMessageDiv = document.createElement('div');
-    newMessageDiv.className = 'sent';
+    let img = document.createElement("img");
+    img.src = "http://emilcarlsson.se/assets/mikeross.png";
+    img.alt = "";
 
-    let img = document.createElement('img');
-    img.src = 'http://emilcarlsson.se/assets/mikeross.png';
-    img.alt = '';
-
-    let paragraph = document.createElement('p');
+    let paragraph = document.createElement("p");
     paragraph.textContent = message;
 
     newMessageDiv.appendChild(img);
@@ -28,22 +23,22 @@ function newMessage() {
 
     messagesContainer.appendChild(newMessageDiv);
 
-    messageInput.value = '';
+    messageInput.value = "";
 
-    let activeContactPreview = document.querySelector('.contact.active .preview');
-    activeContactPreview.innerHTML = '<span>You: </span>' + message;
+    // let activeContactPreview = document.querySelector(".contact.active .preview");
+    // activeContactPreview.innerHTML = "<span>You: </span>" + message;
 
     messagesContainer.scrollTop = messagesContainer.scrollHeight;
 }
 
-let messagesContainer = document.querySelector('.messaging-body');
+let messagesContainer = document.querySelector(".messaging-body");
 messagesContainer.scrollTop = messagesContainer.scrollHeight;
 
-const submit = document.querySelector('.send')
+const submit = document.querySelector(".send");
 
-submit.addEventListener('click', () => {
+submit.addEventListener("click", () => {
     newMessage();
-    // alert('ok')
+    // console.log('ok')
 });
 
 // const draggableElement = document.getElementById('frame');
@@ -72,8 +67,6 @@ submit.addEventListener('click', () => {
 //     document.removeEventListener('mouseup', handleMouseUp);
 // }
 
-
-
 // // script.js
 
 // // const socket = new WebSocket('ws://localhost:8080');
@@ -81,7 +74,7 @@ submit.addEventListener('click', () => {
 // // // Écoutez les messages
 // // socket.addEventListener('message', (event) => {
 // //     const message = JSON.parse(event.data);
-    
+
 // //     // Mettez à jour l'interface utilisateur avec le nouveau message
 // //     updateUI(message);
 // // });
@@ -105,7 +98,6 @@ submit.addEventListener('click', () => {
 // //     // Envoyez le message au serveur WebSocket
 // //     socket.send(JSON.stringify(message));
 // // }
-
 
 // // // script.js
 

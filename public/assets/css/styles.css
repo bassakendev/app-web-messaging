@@ -75,6 +75,7 @@ Thème 9: Coucher de Soleil Chaud
 * {
     padding: 0px;
     overflow: hidden;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 body {
@@ -97,12 +98,14 @@ header {
     background-color: var(--primary);
     text-align: center;
     padding: 0px;
-    font-family: 'Montsratt';
     font-size: 30px;
     font-weight: bold;
     color: white;
 }
 
+header .logo {
+    margin-left: 30px;
+}
 .shine {
     color: var(--secondary);
 }
@@ -113,11 +116,15 @@ header {
     flex: 1;
     position: relative;
 }
+button {
+    background-color: var(--primary);
+    border: var(--primary);
+}
 /* Options Style */
 
 #chat-box #body #options {
     height: 100%;
-    width: 3%;
+    width: 25px;
     background-color: var(--primary);
     padding: 5px;
     display: flex;
@@ -160,12 +167,12 @@ header {
     transition: all ease 900ms;
 }
 
-@media screen and (max-width:870px) {
+@media screen and (max-width:970px) {
 
     #chat-box #body #contacts {
         position: absolute;
         z-index: 0;
-        left: 4.5%;
+        left: 35px;
         width: 60%;
         border-radius: unset;
         transition: all ease 900ms;
@@ -178,6 +185,18 @@ header {
     }
 }
 
+@media screen and (max-width:500px) {
+    #chat-box #body #contacts {
+        position: absolute;
+        z-index: 0;
+        left: 35px;
+        width: calc(100% - 35px);
+        border-radius: unset;
+        transition: all ease 900ms;
+        box-shadow: 25px 23px 46px 2px var(--tertiary);
+    }
+
+}
 #chat-box #body #contacts .contacts-header {
     height: 70px;
     padding: 10px;
@@ -450,7 +469,7 @@ header {
     background-color: var(--tertiary);
     width: 100%;
     flex: 1;
-    overflow-y: scroll;
+    overflow-y: auto;
     overflow-x: hidden;
 }
 
@@ -560,7 +579,7 @@ header {
 #chat-box #body #messaging {
     display: flex;
     flex-direction: column;
-    height: 100%;
+    width: 100%;
     flex: 1;
         z-index: 3;
 }
@@ -600,23 +619,33 @@ header {
 }
 
 #chat-box #body #messaging .messaging-body {
-    padding: 10px;
+    overflow-y: scroll;
+        overflow-x: hidden;
     background: linear-gradient(-20deg, var(--quaternary) 50%, white 20%, var(--quaternary));
     width: 100%;
     flex: 1;
-        overflow-y: scroll;
-        overflow-x: hidden;
+        
 }
 
-
-::-webkit-scrollbar {
-    width: 8px;
+.contacts-body-list::-webkit-scrollbar {
+    width: 6px;
     background: var(--tertiary);
-        border-radius: 15px;
+    border-radius: 15px;
 }
 
-::-webkit-scrollbar-thumb {
+.contacts-body-list::-webkit-scrollbar-thumb {
     background: var(--quaternary);
+    border-radius: 15px;
+    }
+    
+    .messaging-body::-webkit-scrollbar {
+        width: 6px;
+        background: var(--quaternary);
+        border-radius: 15px;
+    }
+    
+    .messaging-body::-webkit-scrollbar-thumb {
+        background: var(--tertiary);
     border-radius: 15px;
 }
 
@@ -709,6 +738,7 @@ header {
 
 .icone {
     cursor: pointer;
+    color: var(--quaternary);
 }
 
 .icone:hover {
