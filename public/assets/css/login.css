@@ -1,0 +1,176 @@
+/* App thème config var */
+
+:root {
+    --primary: #001F3F;
+    --secondary: #003366;
+    --tertiary: #66A1CC;
+    --quaternary: #F4F7FF;
+}
+
+/*
+Thème 1: Bleu Harmonieux
+
+#3D5A80 (Bleu pétrole)
+#98C1D9 (Bleu clair)
+#E0FBFC (Bleu pastel)
+#EE6C4D (Rouge orangé)
+
+Thème 2: Vert Frais
+
+#05668D (Bleu-vert)
+#028090 (Turquoise)
+#00A896 (Vert émeraude)
+#02C39A (Vert menthe)
+
+Thème 3: Rose Doux
+
+#E63946 (Rouge corail)
+#F1FAEE (Blanc cassé)
+#A8DADC (Rose clair)
+#457B9D (Bleu acier)
+
+Thème 4: Aubergine et Or
+
+#2E1437 (Aubergine foncé)
+#6A0572 (Violet royal)
+#AB83A1 (Violet clair)
+#F8F3FF (Blanc cassé)
+
+Thème 5: Café Latte
+
+#452E3C (Violet foncé)
+#8D697A (Violet moyen)
+#D0AFCB (Violet clair)
+#F4EEFF (Blanc lavande)
+
+Thème 6: Aurore Boréale
+
+#001F3F (Bleu foncé)
+#003366 (Bleu royal)
+#66A1CC (Bleu clair)
+#EFF7FF (Blanc pâle)
+
+Thème 7: Argent Élégant
+
+#C0C0C0 (Argent)
+#A9A9A9 (Argent foncé)
+#D3D3D3 (Argent clair)
+#F5F5F5 (Blanc fumée)
+
+Thème 8: Nature Enchanteresse
+
+#228B22 (Vert forêt)
+#32CD32 (Vert lime)
+#90EE90 (Vert pâle)
+#FAFAD2 (Jaune pâle)
+
+Thème 9: Coucher de Soleil Chaud
+
+#FF4500 (Rouge-orangé)
+#FF8C00 (Orange foncé)
+#FFD700 (Or)
+#FFEDC0 (Beige)
+*/
+
+* {
+    padding: 0px;
+    overflow: hidden;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    padding: 0px;
+    margin: 0px;
+    background: linear-gradient(-20deg, var(--secondary) 50%, white 20%, var(--primary));
+}
+
+/* style */
+
+form {
+    width: 500px;
+    height: 80vh;
+    background: linear-gradient(-20deg, var(--primary) 50%, white 20%, var(--secondary));
+    display: flex;
+    flex-direction: column;
+    border-radius: 50px;
+}
+
+@media screen and (max-width:550px) {
+    form {
+        flex: 1;
+        border-radius: unset;
+    }
+}
+
+form .header {
+    width: auto;
+    /* height: 35px; */
+    /* background-color: var(--primary); */
+    text-align: center;
+    padding: 0px;
+    font-size: 50px;
+    font-weight: bold;
+    color: white;
+}
+
+form .header .shine {
+    color: var(--secondary);
+}
+
+form .body {
+    margin: auto;
+    width: 80%;
+    height: 300px;
+}
+
+form .body .input-form {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+}
+
+form .body .input-form label {
+    font-size: 25px;
+    font-weight: 600;
+    color: var(--tertiary);
+    margin-bottom: 20px;
+}
+
+form .body .input-form input {
+    outline: none;
+    height: 30px;
+    border: transparent;
+    border-radius: 25px;
+    padding: 10px;
+    color: white;
+    background: linear-gradient(-20deg, var(--tertiary) 20%, white 40%, var(--quaternary) 10%, var(--secondary) 10%, transparent);
+}
+
+form .body .input-form input:focus {
+    outline: none;
+}
+
+form .body .input-form input::placeholder {
+    color: white;
+}
+
+form .footer {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+form .footer button {
+    width: 200px;
+    height: 40px;
+    border-radius: 25px;
+    color: var(--tertiary);
+    font-size: 17px;
+    cursor: pointer;
+    border: var(--primary);
+}
